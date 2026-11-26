@@ -66,6 +66,18 @@ public:
 
   std::vector<float>        T; ///< Global time (time since beginning of event).
 
+  /// @{ Local momentum
+  std::vector<float>        px;
+  std::vector<float>        py;
+  std::vector<float>        pz;
+  /// @}
+
+  /// @{ Global momentum
+  std::vector<float>        PX;
+  std::vector<float>        PY;
+  std::vector<float>        PZ;
+  /// @}
+
   std::vector<float>        stepLength; ///< Step length taken for hit.
   std::vector<float>        preStepKineticEnergy; ///< Kinetic energy in GeV at pre step point.
 
@@ -102,7 +114,7 @@ public:
   bool storePhysicsProcesses = false;
 #endif
 
-  ClassDef(BDSOutputROOTEventLoss,5);
+  ClassDef(BDSOutputROOTEventLoss,6);
 };
 
 #endif

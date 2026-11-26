@@ -1239,6 +1239,18 @@ Extra information can be recorded but this typically dominates the output file s
 +------------------------+-----------------------+-------------------------------------------------------------------+
 | T                      | std::vector<float>    | (optional) Global time-of-flight since beginning of event (ns)    |
 +------------------------+-----------------------+-------------------------------------------------------------------+
+| px                     | std::vector<float>    | (optional) Local X component of the momentum (GeV)                |
++------------------------+-----------------------+-------------------------------------------------------------------+
+| py                     | std::vector<float>    | (optional) Local Y component of the momentum (GeV)                |
++------------------------+-----------------------+-------------------------------------------------------------------+
+| pz                     | std::vector<float>    | (optional) Local Z component of the momentum (GeV)                |
++------------------------+-----------------------+-------------------------------------------------------------------+
+| PX                     | std::vector<float>    | (optional) Global X component of the momentum (GeV)               |
++------------------------+-----------------------+-------------------------------------------------------------------+
+| PY                     | std::vector<float>    | (optional) Global Y component of the momentum (GeV)               |
++------------------------+-----------------------+-------------------------------------------------------------------+
+| PZ                     | std::vector<float>    | (optional) Global Z component of the momentum (GeV)               |
++------------------------+-----------------------+-------------------------------------------------------------------+
 | stepLength             | std::vector<float>    | (optional) Length of step that the energy deposition was          |
 |                        |                       | produced in (m)                                                   |
 +------------------------+-----------------------+-------------------------------------------------------------------+
@@ -1250,6 +1262,10 @@ Extra information can be recorded but this typically dominates the output file s
 +------------------------+-----------------------+-------------------------------------------------------------------+
 | postStepProcessSubType | std::vector<int>      | Post step physics process sub-ID in Geant4 notation               |
 +------------------------+-----------------------+-------------------------------------------------------------------+
+
+.. note:: The momentum variables (:code:`px`, :code:`py`, :code:`pz`, :code:`PX`, :code:`PY`,
+	  :code:`PZ`) are only filled for :code:`PrimaryFirstHit` and :code:`PrimaryLastHit`, where
+	  they are always stored. They are the momentum at the post-step point of the step of the hit. They are empty for energy deposition branches such as :code:`Eloss`.
 
 BDSOutputROOTEventLossWorld
 ***************************

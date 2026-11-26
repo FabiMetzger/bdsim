@@ -12,6 +12,19 @@ if you'd like to give us feedback or help in the development.  See :ref:`support
 * Any aperture shape can be used for both the inside and the outside of a collimator.
 
 
+V1.9.0 - Upcoming Release
+=========================
+
+New Features
+------------
+
+* The local and global post-step momentum (GeV) are now stored in :code:`PrimaryFirstHit` and
+  :code:`PrimaryLastHit` as the new variables :code:`px`, :code:`py`, :code:`pz` (local)
+  and :code:`PX`, :code:`PY`, :code:`PZ` (global) in :code:`BDSOutputROOTEventLoss`. These
+  are not filled for energy deposition branches.
+* :code:`BDSOutputROOTEventLoss` class version increased to 6.
+
+
 v1.8.2 - 2026 / 11 / 12
 =======================
 

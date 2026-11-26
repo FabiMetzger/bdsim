@@ -94,6 +94,11 @@ void BDSOutputROOTEventLoss::Fill(const BDSTrajectoryPointHit* hit)
       x.push_back( (float) (pos.x() / CLHEP::m));
       y.push_back( (float) (pos.y() / CLHEP::m));
       z.push_back( (float) (pos.z() / CLHEP::m));
+      
+      const G4ThreeVector& mom = hit->point->GetMomentumLocal();
+      px.push_back( (float) (mom.x() / CLHEP::GeV));
+      py.push_back( (float) (mom.y() / CLHEP::GeV));
+      pz.push_back( (float) (mom.z() / CLHEP::GeV));
     }
   
   if (storeGlobal)
@@ -102,6 +107,11 @@ void BDSOutputROOTEventLoss::Fill(const BDSTrajectoryPointHit* hit)
       X.push_back( (float) (pos.x() / CLHEP::m));
       Y.push_back( (float) (pos.y() / CLHEP::m));
       Z.push_back( (float) (pos.z() / CLHEP::m));
+
+      const G4ThreeVector& mom = hit->point->GetPostMomentum();
+      PX.push_back( (float) (mom.x() / CLHEP::GeV));
+      PY.push_back( (float) (mom.y() / CLHEP::GeV));
+      PZ.push_back( (float) (mom.z() / CLHEP::GeV));
     }
   
   if (storeTime)
@@ -190,6 +200,12 @@ void BDSOutputROOTEventLoss::Fill(const BDSOutputROOTEventLoss* other)
   Y = other->Y;
   Z = other->Z;
   T = other->T;  
+  px = other->px;
+  py = other->py;
+  pz = other->pz;
+  PX = other->PX;
+  PY = other->PY;
+  PZ = other->PZ;
   stepLength           = other->stepLength;
   preStepKineticEnergy = other->preStepKineticEnergy;
   postStepProcessType  = other->postStepProcessType;
@@ -217,6 +233,12 @@ void BDSOutputROOTEventLoss::FlushLocal()
   Y.clear();
   Z.clear();
   T.clear();
+  px.clear();
+  py.clear();
+  pz.clear();
+  PX.clear();
+  PY.clear();
+  PZ.clear();
   stepLength.clear();
   preStepKineticEnergy.clear();
   postStepProcessType.clear();

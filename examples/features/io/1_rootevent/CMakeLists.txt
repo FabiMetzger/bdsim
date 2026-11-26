@@ -47,6 +47,9 @@ simple_testing(io-no-model        "--file=sc_no_model.gmad --ngenerate=1" "")
 simple_testing(io-no-eloss        "--file=sc_no_eloss.gmad --ngenerate=1" "")
 simple_testing(io-no-eloss-histos "--file=sc_no_eloss_histograms.gmad --ngenerate=1" "")
 
+# local and global momentum in primary first and last hits
+simple_testing(io-primary-hit-momentum "--file=sc_primary_hit_momentum.gmad" "")
+
 # scoring map
 simple_testing(io-scoring-map               "--file=sc_scoringmap.gmad"          "")
 simple_fail(io-scoring-map-bad-range        "--file=sc_scoringmap_no_range.gmad" "")
